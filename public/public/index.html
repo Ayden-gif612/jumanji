@@ -1,0 +1,490 @@
+<!DOCTYPE >
+<html lang="en">
+<head>
+    <meta charset="UTF-11">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Jumanji-Restouran</title>
+</head>
+<body>
+   <div class="header">
+      <form id="booking-form">
+  <input type="text" name="name" placeholder="Имя" required>
+  <input type="tel" name="phone" placeholder="Телефон" required>
+  <input type="number" name="guests" placeholder="Гостей" required>
+  <input type="date" name="date" required>
+  <input type="time" name="time" required>
+  <button type="submit">Забронировать</button>
+</form>
+
+<script>
+document.getElementById('booking-form').addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const form = e.target;
+  const data = {
+    name: form.name.value,
+    phone: form.phone.value,
+    guests: form.guests.value,
+    date: form.date.value,
+    time: form.time.value
+  };
+
+  const res = await fetch('/api/booking', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(data)
+  });
+
+  if (res.ok) {
+    alert('Бронь отправлена!');
+    form.reset();
+  } else {
+    alert('Ошибка отправки');
+  }
+});
+</script>
+
+     <div class="container">
+       <div class="header-line">
+         <div class="header-logo">
+            <img src="logo.png" alt="">
+         </div>
+         <div class="nav">
+            <a class="nav-item" href="https://jumanji.uz/">ГЛАВНАЯ</a>
+            <a class="nav-item" href="https://jumanji.uz/menu">МЕНЮ</a>
+            <a class="nav-item" href="https://jumanji.uz/interer">О НАС</a>
+            <a class="nav-item" href="https://jumanji.uz/zabronirovat-stol">БРОНЬ</a>
+         </div>
+         <div class="cart">
+            <a href="https://jumanji.uz/">
+                <img class="cart-img" src="cart.png" alt="">
+            </a>
+         </div>
+         <div class="phone">
+            <div class="phone-holder">
+            <div class="phone-img">
+                <img src="phone.png" alt="">
+            </div>
+            <div class="number"><a class="num" href="">+998-94-049-90-49</a>
+            </div>
+        </div>
+            <div class="phone-text">
+            Свяжитесь с нами для 
+            <br> бронирования   
+         </div>
+        </div>
+        <div class="btn">
+        <a class="button" href="https://jumanji.uz/zabronirovat-stol"> ЗАКАЗ СТОЛИКА </a>
+        </div>
+       </div>
+
+       <div class="header-down">
+
+         <div class="header-title">
+            Добро пожаловать в
+
+            <div class="header-subtitle">
+               Наш ресторан
+            </div>
+
+            <div class="header-suptitle">
+               ДОМ ЛУЧШЕЙ ЕДЫ
+            </div>
+
+            <div class="header-bth">
+               <a class="header-button" href="https://jumanji.uz/menu">VIEW MENU</a>
+            </div>
+
+         </div>
+
+       </div>
+
+      </div>
+     </div>
+
+     <div class="cards">
+         <div class="container">
+
+            <div class="cards-holder">
+
+               <div class="card">
+
+                  <div class="card-image">
+         
+                     <img class="card-img" src="card.png" alt="">
+         
+                  </div>
+
+                  <div class="card-title">
+                     Магическая  <span>Атмосфера</span> 
+                  </div>
+
+                  <div class="card-desc">
+                     В нашем заведении царит магическая атмосфера
+                     наполненная вкусными ароматами
+                  </div>
+         
+               </div>
+
+               <div class="card">
+
+                  <div class="card-image">
+         
+                     <img class="card-img" src="card.png" alt="">
+         
+                  </div>
+
+                  <div class="card-title">
+                     Лучшее качество <span>Еды</span>
+                  </div>
+
+                  <div class="card-desc">
+                     Качество нашей Еды - отменное!
+                  </div>
+         
+               </div>
+
+               <div class="card">
+
+                  <div class="card-image">
+         
+                     <img class="card-img" src="card.png" alt="">
+         
+                  </div>
+
+                  <div class="card-title">
+                     Недорогая <span>Еда</span>
+                  </div>
+
+                  <div class="card-desc">
+                     Стоимость нашей Еды
+                     зависит только от ее
+                     количества. Качество
+                     всегда на высоте!
+                  </div>
+         
+               </div>
+
+            </div>
+
+         </div>
+      
+
+     </div>
+
+
+
+     <div class="history">
+         <div class="container">
+               <div class="history-holder">
+
+                  <div class="history-info">
+
+                  <div class="history-title">
+                     Наша <span>История</span>
+                  </div>
+            
+                  <div class="history-desc">
+                     Как и у любого другого самобытного места, у нас есть своя, особая история. Идея ресторана пришла основателям неожиданно.
+                      Во время прогулки по лесу создатель нашего ресторана застрял в сотнях километров от ближайшего населенного пункта. 
+                     Вдали от цивилизации и связи им пришлось навремя обустровать себе нехитрый быт, добывать и готовить себе еду.
+                  </div>
+            
+                  <div class="history-number">
+                     <div class="number-item">
+                        93 <span>Напитки</span>
+                     </div>
+      
+                    <div class="number-item">
+                        206 <span>Еда</span>
+                     </div>
+      
+                     <div class="number-item">
+                        71 <span>Закуски</span>
+                     </div>
+                  </div>
+
+               </div>
+
+               <div class="history-images">
+
+               <img class="images-1" src="1.jpg" alt="">
+               <img class="images-2" src="2.jpg" alt="">
+               <img class="images-3" src="3.jpg" alt="">
+
+               </div>
+
+               </div>
+
+         </div>
+       
+     </div>
+
+
+     <div class="black-block">
+
+         <div class="container">
+
+              <div class="block-holder">
+
+               <div class="left">
+                  <div class="left-title">
+                     Отпразднуйте в одном  из 
+                     <br>самых лучших ресторанов.
+                  </div>
+
+                  <div class="left-text">
+                     Только в этом месяце бизнес-ланч от 250 ₽
+                  </div>
+            </div>
+
+            <div class="right">
+               <div class="right-button">
+                  <a href="https://jumanji.uz/zabronirovat-stol" class="right-btn">ЗАКАЗ СТОЛИКА</a>
+               </div>
+            </div>
+
+              </div>
+
+         </div>
+
+     </div>
+
+
+     <div class="dishes">
+
+         <div class="container">
+
+            <div class="dishes-holder">
+
+               <div class="dishes-title">
+                  Наши <span>Блюда</span>
+               </div>
+
+               <div class="burgers">
+                  <div class="burgers-image">
+                     <img src="pizza.jpg" class="pizza" alt="">
+                  </div>
+                  <div class="burgers-items">
+                     <div class="burger-item">
+                        <img src="burger.jpg" class="burger" alt="">
+                        <div class="burger-text">
+                           Гамбургер мини --------------- 220 ₽
+                        </div>
+                     </div>
+
+                     <div class="burger-item">
+                        <img src="bigburger.jpg" class="burger" style=" height: 140px; width: 160px;" alt="">
+                        <div class="burger-text">
+                           Гамбургер большой --------------- 400 ₽
+                        </div>
+                     </div>
+                     <div class="burger-item">
+                        <img src="chickenburger.jpg" class="burger" style=" height: 140px; width: 160px;" alt="">
+                        <div class="burger-text">
+                           Гамбургер куринный --------------- 270 ₽
+                        </div>
+                     </div>
+
+                  </div>
+               </div>
+
+            </div>
+
+         </div>
+
+     </div>
+
+
+     <div class="menu">
+
+         <div class="container">
+
+            <div class="menu-title">
+               Наше Меню
+            </div>
+
+               <div class="menu-items">
+
+                     <div class="menu-item">
+                           <div class="menu-image">
+                              <img src="menu-item.jpg" class="menu-img" alt="">
+                              <div class="price">
+                                 <img src="price.png" class="price-image" alt="">
+                                 <div class="price-420">
+                                    420
+                                 </div>
+                              </div>
+                           </div>
+
+                           <div class="menu-text">
+                              Гамбургер Макси
+                           </div>
+                            
+                           <div class="menu-subtext">
+                              Максимально толстый <br> слой мяса 
+                           </div>
+
+                           <div class="menu-button">
+
+                                 <a href="https://jumanji.uz/dostavka" class="menu-btn">ЗАКАЗАТЬ</a>
+
+                           </div>
+
+                     </div>
+                     <div class="menu-item">
+                        <div class="menu-image">
+                           <img src="menu-item.jpg" class="menu-img" alt="">
+                           <div class="price">
+                              <img src="price.png" class="price-image" alt="">
+                              <div class="price-420">
+                                 260
+                              </div>
+                           </div>
+                        </div>
+
+                        <div class="menu-text">
+                           Гамбургер Мини
+                        </div>
+                         
+                        <div class="menu-subtext">
+                           Максимально толстый <br> слой продуктов
+                        </div>
+
+                        <div class="menu-button">
+
+                              <a href="https://jumanji.uz/dostavka" class="menu-btn">ЗАКАЗАТЬ</a>
+
+                        </div>
+
+                  </div>
+
+                  <div class="menu-item">
+                     <div class="menu-image">
+                        <img src="menu-item.jpg" class="menu-img" alt="">
+                        <div class="price">
+                           <img src="price.png" class="price-image" alt="">
+                           <div class="price-420">
+                              650
+                           </div>
+                        </div>
+                     </div>
+
+                     <div class="menu-text">
+                        Гамбургер XXL
+                     </div>
+                      
+                     <div class="menu-subtext">
+                        Максимально толстый <br> слой мяса
+                     </div>
+
+                     <div class="menu-button">
+
+                           <a href="https://jumanji.uz/dostavka" class="menu-btn">ЗАКАЗАТЬ</a>
+
+                     </div>
+
+               </div>
+
+
+               </div>
+
+         </div>
+
+     </div>
+
+
+     <div class="coment">
+
+      <div class="container">
+
+         <div class="coment-text">
+            Я надолго запомню мой День рождения, проведённый в этом ресторане! Кусочек родной Армении!!! 
+            Отдельное спасибо за комплепент в виде фруктовой тарелки. 
+            Будем рекомендовать этот ресторан своим друзьям и родственникам также за рубежом, путешествующих в Санкт-Петербург!!!
+         </div>
+         <div class="coment-image">
+            <img src="face.png" class="coment-img" alt="">
+         </div>
+
+         <div class="coment-type">
+            Посетитель
+         </div>
+
+         <div class="coment-name">
+            Николай
+         </div>
+         
+      </div> 
+
+     </div>
+
+
+
+     <div class="galery">
+
+         <div class="container">
+
+            <div class="galery-title">
+               Галерея <span>Блюд</span>
+            </div>
+
+            <div class="galery-content">
+
+               <div class="galery-left">
+
+                     <div class="galery-up">
+                        <img src="10.jpg" alt="">
+                     </div>
+                     <div class="galery-down">
+                        <img src="20.jpg" alt="">
+                        <img src="30.jpg" alt="">
+                     </div>
+                  
+               </div>
+
+               <div class="galery-right">
+
+                  <div class="galery-up">
+                     <img src="20.jpg" alt="">
+                        <img src="30.jpg" alt="">
+                  </div>
+                  <div class="galery-down">
+                     <img src="10.jpg" alt="">
+                  </div>
+
+               </div>
+
+            </div>
+
+         </div>
+
+     </div>
+
+
+     <div class="cook">
+
+      <div class="container">
+
+         <div class="cook-title">
+            Наши <span>Повара</span>
+         </div>
+
+         <div class="cook-content">
+            <img src="1c.jpg" alt="">
+            <img src="2c.jpg" alt="">
+            <img src="3c.png" alt="">
+         </div>
+
+      </div>
+
+     </div>
+
+
+     <div class="footer">
+      Copyright 2025г
+     </div>
+ 
+    
+</body>
+</html>
